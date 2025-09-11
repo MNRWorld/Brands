@@ -44,10 +44,10 @@
           <h3 class="title">${escapeHtml(item.name)}</h3>
           <div class="badge ${pillClass}">${pillIcon}</div>
         </div>
-        <div class="rating">${item.rating}</div>
+        <div class="brand">${escapeHtml(item.brand || "No brand")}</div>
         <div class="dates">
-          <div>Start: <strong>${formatDate(item.start)}</strong></div>
-          <div>End: <strong>${formatDate(item.end)}</strong></div>
+          <div><strong>${formatDate(item.start)}</strong></div>
+          <div>${formatDate(item.end)}</div>
         </div>
         <button class="show-review">Details</button>
         <div class="review">${escapeHtml(item.review || "No details added yet.")}</div>
