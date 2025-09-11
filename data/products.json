@@ -1,13 +1,13 @@
 [
 {
     "id": 1,
-    "name": "ফুলস্ট্যাক ডেভেলপমেন্ট",
-    "thumb": "thumbnail/products/full_stack_development.png",
-    "rating": 4.7,
-    "start": "2021-05-22",
-    "end": "2021-05-25",
+    "name": "Bombay Sweets Potato Crackers",
+    "thumb": "https://i.chaldn.com/_mpimage/bombay-sweets-potato-crackers-28-gm?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D177259&q=best&v=1&m=400&webp=1",
+    "rating": Bombay Sweets,
+    "start": "Product of",
+    "end": "Bangladesh",
     "pill": "gpill",
-    "review": "ফুলস্ট্যাক ডেভেলপমেন্ট শেখার একটি অসাধারণ কোর্স।"
+    "review": "Bombay Sweets Potato Crackers is a popular light and crispy snack made from a blend of potato and wheat flour. Known for its distinctive spicy tomato flavor, this snack has been a flagship product of Bombay Sweets for many years. It is a go-to choice for those who enjoy savory, flavorful snacks. "
   },
     {
     "id": 2,
@@ -16,7 +16,7 @@
     "rating": 0.00,
     "start": "2021-05-22",
     "end": "2021-05-25",
-    "pill": "gpill",
+    "pill": "rpill",
     "review": "ফুলস্ট্যাক ডেভেলপমেন্ট শেখার একটি অসাধারণ কোর্স।"
   }
 ]
