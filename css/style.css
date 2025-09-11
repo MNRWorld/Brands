@@ -93,20 +93,20 @@ html, body {
 .gpill {
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.03);
+  background: #e6f4ea;
   font-size: 12px;
-  color: var(--muted);
+  color: #124c48;
 }
 
 .rpill {
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.03);
+  background: #fcebeb;
   font-size: 12px;
-  color: var(--muted);
+  color: #880000;
 }
 
-.gpill {
+.grpill {
   padding: 6px 10px;
   border-radius: 999px;
   background: rgba(255,255,255,0.03);
