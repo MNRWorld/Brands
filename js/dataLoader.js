@@ -1,8 +1,9 @@
 (() => {
   const pageSize = 12;
-  const currentPage = { books: 1, anime: 1 };
-  let books = [];
-  let anime = [];
+  const currentPage = { products: 1, brands: 1, groups: 1 };
+  let products = [];
+  let brands = [];
+  let groups = [];
 
   function formatDate(d) {
     try {
@@ -24,20 +25,32 @@
   function makeCard(item, type) {
     const el = document.createElement('article');
     el.className = 'card';
+
+    // Pill logic
+    let pillClass = "grpill";
+    let pillIcon = '<i class="fa-solid fa-minus"></i>';
+    if (item.pill === "gpill") {
+      pillClass = "gpill";
+      pillIcon = '<i class="fa-solid fa-check"></i>';
+    } else if (item.pill === "rpill") {
+      pillClass = "rpill";
+      pillIcon = '<i class="fa-solid fa-xmark"></i>';
+    }
+
     el.innerHTML = `
       <div class="thumb"><img src="${item.thumb}" alt="${escapeHtml(item.name)}"></div>
       <div class="meta">
         <div class="meta-header">
           <h3 class="title">${escapeHtml(item.name)}</h3>
-          <div class="badge">${type}</div>
+          <div class="badge ${pillClass}">${pillIcon}</div>
         </div>
-        <div class="rating">★ ${item.rating}</div>
+        <div class="rating">${item.rating}</div>
         <div class="dates">
           <div>Start: <strong>${formatDate(item.start)}</strong></div>
           <div>End: <strong>${formatDate(item.end)}</strong></div>
         </div>
-        <button class="show-review">Show Review</button>
-        <div class="review">${escapeHtml(item.review || "No review yet.")}</div>
+        <button class="show-review">Details</button>
+        <div class="review">${escapeHtml(item.review || "No details added yet.")}</div>
       </div>
     `;
 
@@ -47,10 +60,10 @@
     btn.addEventListener('click', () => {
         if (reviewDiv.style.display === 'none' || reviewDiv.style.display === '') {
             reviewDiv.style.display = 'block';
-            btn.textContent = 'Hide Review';
+            btn.textContent = 'Hide Details';
         } else {
             reviewDiv.style.display = 'none';
-            btn.textContent = 'Show Review';
+            btn.textContent = 'Show Details';
         }
     });
 
@@ -58,8 +71,9 @@
   }
 
   function updateCounts() {
-    if(document.getElementById("bookCount")) document.getElementById("bookCount").textContent = books.length;
-    if(document.getElementById("animeCount")) document.getElementById("animeCount").textContent = anime.length;
+    if(document.getElementById("productCount")) document.getElementById("productCount").textContent = products.length;
+    if(document.getElementById("brandCount")) document.getElementById("brandCount").textContent = brands.length;
+    if(document.getElementById("groupCount")) document.getElementById("groupCount").textContent = groups.length;
   }
 
   function renderList(containerId, items, type) {
@@ -123,8 +137,9 @@
         tab.setAttribute('aria-selected','true');
         document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
         document.getElementById(target).classList.add('active');
-        if(target === 'books') renderList('books', books, 'Book');
-        if(target === 'anime') renderList('anime', anime, 'Anime');
+        if(target === 'products') renderList('products', products, 'Product');
+        if(target === 'brands') renderList('brands', brands, 'Brand');
+        if(target === 'groups') renderList('groups', groups, 'Group');
       });
     });
   }
@@ -135,23 +150,30 @@
     input.addEventListener("keyup", function() {
       let filter = this.value.toLowerCase();
       let activeTab = document.querySelector(".tab.active").getAttribute("data-tab");
-      let items = (activeTab === "books" ? books : anime);
+      let items = (activeTab === "products" ? products : activeTab === "brands" ? brands : groups);
       let filtered = items.filter(it => it.name.toLowerCase().includes(filter));
       currentPage[activeTab] = 1;
-      renderList(activeTab, filtered, activeTab === "books" ? "Book" : "Anime");
+      renderList(activeTab, filtered, 
+        activeTab === "products" ? "Product" : activeTab === "brands" ? "Brand" : "Group"
+      );
     });
   }
 
   function loadData() {
-    fetch('data/books.json')
+    fetch('data/products.json')
       .then(res => res.json())
-      .then(data => { books = data; updateCounts(); renderList('books', books, 'Book'); })
-      .catch(err => console.error('Error loading books:', err));
+      .then(data => { products = data; updateCounts(); renderList('products', products, 'Product'); })
+      .catch(err => console.error('Error loading products:', err));
 
-    fetch('data/anime.json')
+    fetch('data/brands.json')
       .then(res => res.json())
-      .then(data => { anime = data; updateCounts(); })
-      .catch(err => console.error('Error loading anime:', err));
+      .then(data => { brands = data; updateCounts(); })
+      .catch(err => console.error('Error loading brands:', err));
+
+    fetch('data/groups.json')
+      .then(res => res.json())
+      .then(data => { groups = data; updateCounts(); })
+      .catch(err => console.error('Error loading groups:', err));
   }
 
   document.addEventListener('DOMContentLoaded', () => {
