@@ -4,75 +4,72 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>riwnlmk's Shelf</title>
-    <meta name="title" content="riwnlmk's Shelf"/>
+    <title>Brand List by MNR</title>
+    <meta name="title" content="Brand List by MNR"/>
     <meta name="theme-color" content="#0f1724"/>
-    <meta name="description" content="Moments captured through pages, screens and frames."/>
-    <meta name="keywords" content="books, anime, collections, list"/>
-    <meta name="author" content="Md. Ridwanul Islam Muntakim"/>
+    <meta name="description" content="Simple 'Brand' List in One Place."/>
+    <meta name="keywords" content="brand, business, collections, list"/>
+    <meta name="author" content="Naimur Rahaman"/>
     <meta name="robots" content="index, follow"/>
     <meta name="language" content="en"/>
     <meta name="google-site-verification" content="c8Mq2hIscnwU1kBAFsO8NjB_cJmO2TnXTw3mXgxB5FE"/>
 
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://mnrworld.github.io/brands"/>
-    <meta property="og:title" content="riwnlmk's Shelf"/>
-    <meta property="og:description" content="Moments captured through pages, screens and frames."/>
+    <meta property="og:title" content="Brand List by MNR"/>
+    <meta property="og:description" content="Simple 'Brand' List in One Place."/>
     <meta property="og:image" content="https://raw.githubusercontent.com/MNRfrom2020/logo-and-icon-cdn/7eb2d5071260df3ce2465bf7129f08df596b896c/Logo/MNR%20World/MNR%20Icon.svg"/>
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://riwnlmk.github.io/Shelf"/>
-    <meta name="twitter:title" content="riwnlmk's Shelf"/>
-    <meta name="twitter:description" content="Moments captured through pages, screens and frames."/>
-    <meta name="twitter:image" content="https://riwnlmk.github.io/Shelf/assets/riwnlmk.jpg"/>
+    <meta name="twitter:url" content="https://mnrworld.github.io/brands"/>
+    <meta name="twitter:title" content="Brand List by MNR"/>
+    <meta name="twitter:description" content="Simple 'Brand' List in One Place."/>
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/MNRfrom2020/logo-and-icon-cdn/7eb2d5071260df3ce2465bf7129f08df596b896c/Logo/MNR%20World/MNR%20Icon.svg"/>
 
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="https://github.com/MNRWorld/Brands/blob/master/Assets/BrandList.png?raw=true"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/all.min.css"> 
+    <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search..."/>
-    </div>
 
     <main class="container">
         <header class="profile-card">
             <div class="avatar-wrap">
-                <img src="https://raw.githubusercontent.com/MNRfrom2020/logo-and-icon-cdn/7eb2d5071260df3ce2465bf7129f08df596b896c/Logo/MNR%20World/MNR%20Icon.svg" alt="Md. Ridwanul Islam Muntakim" class="avatar"/>
+                <img src="https://raw.githubusercontent.com/MNRfrom2020/logo-and-icon-cdn/7eb2d5071260df3ce2465bf7129f08df596b896c/Logo/MNR%20World/MNR%20Icon.svg" alt="MNR World" class="avatar"/>
             </div>
 
             <div class="profile-info">
                 <div class="name-row">
-                    <h1>Brands</h1>
-                    <span class="pill">List</span>
+                    <h1>Brand List by MNR</h1>
+                    <span class="gpill"><i class="fa-solid fa-check"></i></span>
                 </div>
                 <p class="subtitle">Simple 'Brand' list in one place.</p>
 
-                <div class="social-icons">
-                    <a href="https://github.com/riwnlmk" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:riwnlmk@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://facebook.com/riwnlmk" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://t.me/riwnlmk" target="_blank" aria-label="Telegram">
-                        <i class="fab fa-telegram-plane"></i>
-                    </a>
-                </div>
             </div>
+
+            
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search..."/>
+    </div>
+
+            
         </header>
 
         <section class="tabs">
             <nav class="tab-list" role="tablist" aria-label="Collections">
-                <button class="tab active" data-tab="books" role="tab" aria-selected="true">
-                    Books <span id="bookCount" class="count-badge">0</span>
+                
+                <button class="tab active" data-tab="products" role="tab" aria-selected="true">
+                    Products <span id="productsCount" class="count-badge">0</span>
                 </button>
+                
+                <button class="tab" data-tab="brands" role="tab" aria-selected="false">
+                    Brands <span id="brandsCount" class="count-badge">0</span>
+                </button>
+                
                 <button class="tab" data-tab="anime" role="tab" aria-selected="false">
-                    Anime <span id="animeCount" class="count-badge">0</span>
+                    Group/Mother Brands <span id="animeCount" class="count-badge">0</span>
                 </button>
+                
                 <button class="tab" data-tab="timeline" role="tab" aria-selected="false">Timeline</button>
             </nav>
             
